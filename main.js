@@ -35,8 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
         data: {
             labels: ['Recovered', 'Deaths', 'Infected'],
             datasets: [{
-                label: 'Overall Status',
-                data: [8647746, 2767657, 1000000],
+                data: [8647, 2767, 1000],
                 borderColor: '#ffb700',
                 backgroundColor: '#ffb70044',
                 fill: true,
