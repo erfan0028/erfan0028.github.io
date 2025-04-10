@@ -553,7 +553,7 @@ nav ul li a:hover {
 @media (max-width: 480px) {
     .chart-box {
         max-width: 95%;
-        padding: 15px;
+        padding: 5px;
     }
 
     .chart-box h3 {
