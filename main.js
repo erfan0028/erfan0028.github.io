@@ -11,8 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
         data: {
             labels: ['USA', 'India', 'China', 'Brazil'],
             datasets: [{
-                label: 'Total Cases',
-                data: [10637465, 4623737, 8627456, 2512456],
+                data: [10637, 4623, 8627, 2512],
                 borderColor: '#00d09c',
                 backgroundColor: '#00d09c44',
                 fill: true,
