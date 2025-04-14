@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <title>Corona Virus Statistics</title>
+    <link href="./style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container-main">
+    <header>
+        <div class="logo">LOGO</div>
+        <nav>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Virus</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Questions & Answers</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+        <button class="get-start">Get Start</button>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h1><span class="green-text">Corona</span> virus statistics</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <button class="btn-header">Service</button>
+            <button class="secondary">Support</button>
+        </div>
+        <div class="hero-image">
+            <img alt="Doctor" src="./assets/images/ai-generated-a-smiling-doctor-with-glasses-and-a-white-lab-coat-isolated-on-transparent-background-free-png.webp"/>
+        </div>
+    </section>
+    <section class="statistics">
+        <h2>Statistics</h2>
+        <div class="stats-box">
+            <div class="filter">
+                <div class="filter-top">
+                    <div class="custom-select" id="customSelect">
+                        <div class="selected">
+                            <span><img alt="" src="./canada-flag-icon.png"/> Canada</span>
+                            <span class="select-icon"><i class="bi bi-chevron-down"></i></span>
+                        </div>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <div class="dropdown-item" data-value="US">USA</div>
+                            <div class="dropdown-item" data-value="IN">India</div>
+                        </div>
+                    </div>
+                    <div class="custom-select" id="customSelect">
+                        <div class="selected">
+                            <span><i class="bi bi-calendar3-range"></i> Date</span>
+                            <span class="select-icon"><i class="bi bi-chevron-down"></i></span>
+                        </div>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <div class="dropdown-item" data-value="2024">2024</div>
+                            <div class="dropdown-item" data-value="2023">2023</div>
+                            <div class="dropdown-item" data-value="2022">2022</div>
+                        </div>
+                    </div>
+                    <button class="btn">Filter</button>
+                </div>
+                <div class="filter-bottom">
+                    <div class="stat"> <strong style="color: #1d3972;">14</strong> <br/> <span>Rank</span></div>
+                    <div class="stat"> <strong style="color: #1d3972;">12,456</strong> <br/> <span>Total Cases</span></div>
+                    <div class="stat"> <strong style="color: rgb(255, 183, 0);">836</strong> <br/> <span>Death</span></div>
+                    <div class="stat"> <strong style="color: #1d3972;">12,456</strong> <br/> <span>Recovered</span></div>
+                    <div class="stat"> <strong style="color: #1d3972;">12,456</strong> <br/> <span>Recovered</span></div>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <h2>Today Statistics</h2>
+                <div class="stat-display">
+                    <div class="stat">
+                        <strong>2,464</strong>
+                        <span>Total Cases</span>
+                    </div>
+                    <div class="stat">
+                        <strong>981</strong>
+                        <span>Recovered</span>
+                    </div>
+                    <div class="stat">
+                        <strong>1,643</strong>
+                        <span>Infected Now</span>
+                    </div>
+                    <div class="stat">
+                        <strong style="color: rgb(255, 183, 0);">542</strong>
+                        <span>Death</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="chart">
+        <h2 class="chart-title">Chart</h2>
+        <div class="charts-container">
+            <div class="chart-box">
+                <h3>Total Cases</h3>
+                <canvas id="chart1"></canvas>
+            </div>
+            <div class="chart-box">
+                <h3>Worldwide</h3>
+                <canvas id="chart2"></canvas>
+            </div>
+            <div class="stats-grid">
+                <h2>Worldwide Statistics</h2>
+                <div class="stat-display">
+                    <div class="stat">
+                        <strong>2,464</strong>
+                        <span>Total Cases</span>
+                    </div>
+                    <div class="stat">
+                        <strong>981</strong>
+                        <span>Recovered</span>
+                    </div>
+                    <div class="stat">
+                        <strong>1,643</strong>
+                        <span>Infected Now</span>
+                    </div>
+                    <div class="stat">
+                        <strong style="color: rgb(255, 183, 0);">542</strong>
+                        <span>Death</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="table">
+        <div class="table-container">
+            <div class="top-table">
+                <h2>Orders Country</h2>
+                <button class="filter-btn">Filter</button>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><i class="bi bi-check-circle-fill"></i> Country</th>
+                            <th>Total Cases</th>
+                            <th>Death</th>
+                            <th>Recovered</th>
+                            <th>Rank</th>
+                            <th>Tracking</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img alt="" src="./assets/images/us.svg"/> USA <span class="status-dot active"></span></td>
+                            <td>10,637,465</td>
+                            <td>2,767,657</td>
+                            <td>8,647,746</td>
+                            <td>1</td>
+                            <td>IN332942</td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img alt="" src="./assets/images/cn.svg"/> China <span class="status-dot"></span></td>
+                            <td>8,627,456</td>
+                            <td>2,232,876</td>
+                            <td>6,211,875</td>
+                            <td>2</td>
+                            <td>IN332942</td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img alt="" src="./assets/images/in.svg"/> India <span class="status-dot active"></span></td>
+                            <td>4,623,737</td>
+                            <td>1,761,762</td>
+                            <td>3,756,721</td>
+                            <td>3</td>
+                            <td>IN332942</td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img alt="" src="./assets/images/br.svg"/> Brazil <span class="status-dot"></span></td>
+                            <td>2,512,456</td>
+                            <td>1,478,564</td>
+                            <td>1,746,761</td>
+                            <td>4</td>
+                            <td>IN332942</td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img alt="" src="./assets/images/ar.svg"/> Argentina <span class="status-dot active"></span></td>
+                            <td>2,221,533</td>
+                            <td>1,243,765</td>
+                            <td>1,527,781</td>
+                            <td>5</td>
+                            <td>IN332942</td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img alt="" src="./assets/images/ir.svg"/> Iran <span class="status-dot"></span></td>
+                            <td>1,763,874</td>
+                            <td>1,129,871</td>
+                            <td>1,162,812</td>
+                            <td>6</td>
+                            <td>IN332942</td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                        <tr>
+                            <td><img alt="" src="./assets/images/ca.svg"/> Canada <span class="status-dot active"></span></td>
+                            <td>1,234,123</td>
+                            <td>1,110,456</td>
+                            <td>1,876,121</td>
+                            <td>7</td>
+                            <td>IN332942</td>
+                            <td><i class="bi bi-three-dots-vertical"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="see-more">See More</button>
+        </div>
+    </section>
+    <section class="blog">
+        <h2>Blog</h2>
+        <div class="blog-container">
+            <div class="bg-item bg-item-top-left"></div>
+            <div class="bg-item bg-item-bottom-right"></div>
+            <div class="blog-item item-1" style="background-image: url('./assets/images/coronavirus-globe-concept_52683-35722.avif');">
+                <div class="content">
+                    <h2><div class="shape"></div> 10 Dangerous Diseases Lorem Spam</h2>
+                    <div class="meta">
+                        <i class="bi bi-calendar3"></i> 2024/12/27 <i class="bi bi-person"></i> Erfan Bayat
+                    </div>
+                </div>
+            </div>
+            <div class="blog-item" style="background-image: url('./assets/images/coronavirus-globe-concept_52683-35722.avif');">
+                <div class="content">
+                    <h2><div class="shape"></div> 10 Dangerous Diseases Lorem Spam</h2>
+                    <div class="meta">
+                        <i class="bi bi-calendar3"></i> 2024/12/27 <i class="bi bi-person"></i> Erfan Bayat
+                    </div>
+                </div>
+            </div>
+            <div class="blog-item" style="background-image: url('./assets/images/coronavirus-globe-concept_52683-35722.avif');">
+                <div class="content">
+                    <h2><div class="shape"></div> 10 Dangerous Diseases Lorem Spam</h2>
+                    <div class="meta">
+                        <i class="bi bi-calendar3"></i> 2024/12/27 <i class="bi bi-person"></i> Erfan Bayat
+                    </div>
+                </div>
+            </div>
+            <div class="blog-item" style="background-image: url('./assets/images/coronavirus-globe-concept_52683-35722.avif');">
+                <div class="content">
+                    <h2><div class="shape"></div> 10 Dangerous Diseases Lorem Spam</h2>
+                    <div class="meta">
+                        <i class="bi bi-calendar3"></i> 2024/12/27 <i class="bi bi-person"></i> Erfan Bayat
+                    </div>
+                </div>
+            </div>
+            <div class="blog-item" style="background-image: url('./assets/images/coronavirus-globe-concept_52683-35722.avif');">
+                <div class="content">
+                    <h2><div class="shape"></div> 10 Dangerous Diseases Lorem Spam</h2>
+                    <div class="meta">
+                        <i class="bi bi-calendar3"></i> 2024/12/27 <i class="bi bi-person"></i> Erfan Bayat
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Virus</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Questions & Answers</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Questions & Answers</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Email</h4>
+                <form>
+                    <input placeholder="Email" required type="email"/>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copy Right @ 2022</p>
+        </div>
+    </footer>
+</div><!-- end container-main -->
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="./main.js"></script>
+</body>
+</html>
