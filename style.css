@@ -1,10 +1,5 @@
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* 
 body, html {
     width: 100%;
     max-width: 100%;
@@ -30,7 +25,7 @@ body::before {
 
 .container-main {
     width: 100%;
-    /* max-width: 1440px;  */
+    max-width: 100%; /* Removed max-width restriction */
     margin: 0 auto;
     padding: 0 20px;
     box-sizing: border-box;
