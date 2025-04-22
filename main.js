@@ -3,59 +3,58 @@ function toggleMenu() {
     navMenu.classList.toggle('active');
 }
 
+
 document.addEventListener('DOMContentLoaded', function() {
-    // برای همه دراپ‌دان‌ها
     const customSelects = document.querySelectorAll('.custom-select');
-    
+
     customSelects.forEach(select => {
         const selected = select.querySelector('.selected');
         const dropdownMenu = select.querySelector('.dropdown-menu');
         const dropdownItems = select.querySelectorAll('.dropdown-item');
-        
-        // باز و بسته کردن منو با کلیک روی selected
+
+        // Toggle dropdown menu on click
         selected.addEventListener('click', function(e) {
             e.stopPropagation();
-            
-            // بستن بقیه دراپ‌دان‌های باز
+            // Close other open dropdowns
             document.querySelectorAll('.dropdown-menu').forEach(menu => {
                 if (menu !== dropdownMenu) {
                     menu.style.display = 'none';
                 }
             });
-            
-            // toggle نمایش منوی جاری
+            // Toggle current dropdown
             dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
         });
-        
-        // انتخاب یک آیتم از منو
+
+        // Handle item selection
         dropdownItems.forEach(item => {
             item.addEventListener('click', function() {
                 const value = this.getAttribute('data-value');
-                const text = this.textContent;
-                
-                // آپدیت selected با آیتم انتخاب شده
+                const text = this.textContent.trim();
+                const img = this.querySelector('img');
+                const icon = this.querySelector('i');
+
+                // Update selected display
                 selected.innerHTML = `
-                    ${this.innerHTML.includes('<img') ? 
-                        `<span><img alt="" src="${this.querySelector('img').getAttribute('src')}"/> ${text}</span>` : 
-                        `<span><i class="${this.querySelector('i')?.className || ''}"></i> ${text}</span>`}
+                    <span>
+                        ${img ? `<img alt="" src="${img.src}"/> ${text}` : 
+                        icon ? `<i class="${icon.className}"></i> ${text}` : text}
+                    </span>
                     <span class="select-icon"><i class="bi bi-chevron-down"></i></span>
                 `;
-                
+
+                // Hide dropdown
                 dropdownMenu.style.display = 'none';
-                
-                // می‌توانید رویداد سفارشی برای تغییر مقدار ایجاد کنید
+
+                // Dispatch custom event
                 const event = new CustomEvent('selectChange', {
-                    detail: {
-                        value: value,
-                        text: text
-                    }
+                    detail: { value, text }
                 });
                 select.dispatchEvent(event);
             });
         });
     });
-    
-    // بستن منوها با کلیک خارج از آنها
+
+    // Close all dropdowns when clicking outside
     document.addEventListener('click', function() {
         document.querySelectorAll('.dropdown-menu').forEach(menu => {
             menu.style.display = 'none';
@@ -63,66 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Log selected values for debugging
 document.querySelectorAll('.custom-select').forEach(select => {
     select.addEventListener('selectChange', function(e) {
-        console.log('مقدار جدید:', e.detail.value);
-        console.log('متن نمایشی:', e.detail.text);
+        console.log('Selected Value:', e.detail.value);
+        console.log('Selected Text:', e.detail.text);
     });
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    // Common chart options
-    const chartOptions = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: {
-                display: false, // Hide legend as per image
-            },
-            tooltip: {
-                enabled: true,
-                mode: 'index',
-                intersect: false
-            }
-        },
-        scales: {
-            y: {
-                beginAtZero: true,
-                ticks: {
-                    font: {
-                        size: 10
-                    },
-                    stepSize: 10,
-                    padding: 5
-                },
-                grid: {
-                    display: true,
-                    color: 'rgba(0, 0, 0, 0.05)',
-                    drawBorder: false
-                }
-            },
-            x: {
-                ticks: {
-                    font: {
-                        size: 10
-                    },
-                    padding: 5
-                },
-                grid: {
-                    display: false
-                }
-            }
-        },
-        elements: {
-            line: {
-                borderWidth: 2
-            },
-            point: {
-                radius: 3,
-                hoverRadius: 5
-            }
-        }
-    };
 
     // Chart 1 (Total Cases)
     const ctx1 = document.getElementById('chart1').getContext('2d');
